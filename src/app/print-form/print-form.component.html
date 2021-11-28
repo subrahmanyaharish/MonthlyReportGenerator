@@ -16,8 +16,8 @@
                 <div class="invoice-details mt25">
                   <div class="well">
                     <ul class="list-unstyled mb0">
-                      <li><strong>Invoice</strong> {{reportToBePrinted.invoiceNumber}}</li>
-                      <li><strong>Invoice Date:</strong> {{reportToBePrinted.invoiceDate|date:'medium'}}</li>
+                      <li><strong>Invoice - </strong> {{reportToBePrinted.invoiceNumber}}</li>
+                      <li><strong>Invoice Date - </strong> {{reportToBePrinted.invoiceDate|date:'medium'}}</li>
                       <!-- <li><strong>Status:</strong> <span class="label label-danger"> Not paid</span></li> -->
                     </ul>
                   </div>
@@ -59,8 +59,20 @@
                           <th class="text-center">{{reportToBePrinted.advance}}</th>
                         </tr>
                         <tr>
+                          <th class="text-right">Toll charges:</th>
+                          <th class="text-center">{{reportToBePrinted.toll}}</th>
+                        </tr>
+                        <tr>
+                          <th class="text-right">Parking Charges:</th>
+                          <th class="text-center">{{reportToBePrinted.parkingCharge}}</th>
+                        </tr>
+                        <tr>
+                          <th class="text-right">Driver Charges:</th>
+                          <th class="text-center">{{reportToBePrinted.driverBeta}}</th>
+                        </tr>
+                        <tr>
                           <th class="text-right">Net Payable:</th>
-                          <th class="text-center">{{reportToBePrinted.travelCost - reportToBePrinted.advance}}</th>
+                          <th class="text-center">{{totalAmount}}</th>
                         </tr>
                       </tfoot>
                     </table>

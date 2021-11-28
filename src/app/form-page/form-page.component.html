@@ -1,4 +1,4 @@
-<div class="container" style="padding-top: 20px;">
+<div class="container" style="padding-top: 20px; padding-bottom: 80px;">
   <form [formGroup]="reportForm" (ngSubmit)="onSubmit()">
 
     <h3>Travel Details</h3>
@@ -19,12 +19,30 @@
           <input formControlName="to" matInput required>
         </mat-form-field>
       </div>
+
+      <div class="form-group col-md-3">
+        <mat-form-field style="margin-right: 10px;" appearance="fill">
+          <mat-label>Invoice Date</mat-label>
+          <input matInput [matDatepicker]="invoiceDate" formControlName="invoiceDate" required>
+          <mat-datepicker-toggle matSuffix [for]="invoiceDate"></mat-datepicker-toggle>
+          <mat-datepicker #invoiceDate></mat-datepicker>
+        </mat-form-field>
+      </div>
+
       <div class="form-group col-md-3">
         <mat-form-field appearance="fill">
           <mat-label>Driver Name</mat-label>
           <input formControlName="driverName" matInput required>
         </mat-form-field>
       </div>
+
+      <div class="form-group col-md-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Driver Number</mat-label>
+          <input formControlName="driverNumber" matInput required>
+        </mat-form-field>
+      </div>
+
       <div class="form-group col-md-3">
         <mat-form-field appearance="fill">
           <mat-label>Petrol</mat-label>
@@ -35,14 +53,42 @@
       <div class="form-group col-md-3">
         <mat-form-field appearance="fill">
           <mat-label>Opening Reading</mat-label>
-          <input formControlName="openingReading" matInput required>
+          <input type="number" (change)="OnReadingChange()" formControlName="openingReading" matInput required>
         </mat-form-field>
       </div>
 
       <div class="form-group col-md-3">
         <mat-form-field appearance="fill">
           <mat-label>End Reading</mat-label>
-          <input formControlName="endReading" matInput required>
+          <input type="number" (change)="OnReadingChange()" formControlName="endReading" matInput required>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group col-md-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Total Reading</mat-label>
+          <input type="number" formControlName="totalReading" matInput required>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group col-md-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Cost per KM</mat-label>
+          <input type="number" (change)="OnTravelCostChange()" formControlName="costPerKm" matInput required>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group col-md-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Toll Charges</mat-label>
+          <input type="number" formControlName="toll" matInput required>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group col-md-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Parking Charges</mat-label>
+          <input type="number" formControlName="parkingCharge" matInput required>
         </mat-form-field>
       </div>
 
@@ -125,12 +171,23 @@
         </div>
       </div>
 
+      <div class="col-md-3">
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Driver Beta</mat-label>
+            <input type="number" formControlName="driverBeta" matInput>
+          </mat-form-field>
+        </div>
+      </div>
+
     </div>
 
 
 
 
     <button mat-raised-button color="primary" type="submit">Submit</button>
+
+
 
 
 

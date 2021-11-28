@@ -13,6 +13,7 @@ import { MaterialModule } from './material.module';
 import { VehicleUploadComponent } from './vehicle-upload/vehicle-upload.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PrintFormComponent } from './print-form/print-form.component';
+import { ReportHistoryComponent } from './report-history/report-history.component';
 
 
 
@@ -22,7 +23,8 @@ import { PrintFormComponent } from './print-form/print-form.component';
     AppComponent,
     FormPageComponent,
     VehicleUploadComponent,
-    PrintFormComponent
+    PrintFormComponent,
+    ReportHistoryComponent
   ],
   imports: [
     BrowserModule,

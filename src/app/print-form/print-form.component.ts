@@ -13,12 +13,13 @@ import html2canvas from 'html2canvas';
 export class PrintFormComponent implements OnInit {
 
   reportToBePrinted: Report;
+  totalAmount: number;
 
   constructor(private service: ReportServiceService) { }
 
   ngOnInit() {
     this.reportToBePrinted = this.service.reportToBePrinted;
-    console.log(this.reportToBePrinted)
+    this.totalAmount = this.reportToBePrinted.travelCost - this.reportToBePrinted.advance +  this.reportToBePrinted.parkingCharge + this.reportToBePrinted.toll + this.reportToBePrinted.driverBeta
   }
 
   print(){

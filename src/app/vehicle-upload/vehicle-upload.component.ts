@@ -46,7 +46,7 @@ export class VehicleUploadComponent implements OnInit {
       }
       return vehiclesArray;
     })).subscribe(
-      data=>{this.vehicles = data; console.log(data)}
+      data=>{this.vehicles = data; }
     )
   }
 
