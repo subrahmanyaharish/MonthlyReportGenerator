@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "vehicles": [
+    {
+      "vehicle": "AP28DS9992",
+      "id": 3
+    },
+    {
+      "vehicle": "AP28DS9992",
+      "id": 4
+    },
+    {
+      "vehicle": "AP23",
+      "id": 7
+    },
+    {
+      "vehicle": "AP2323",
+      "id": 8
+    },
+    {
+      "vehicle": "kdsa;lfk",
+      "id": 9
+    }
+  ]
+}

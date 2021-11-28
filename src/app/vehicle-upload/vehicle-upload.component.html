@@ -1,0 +1,32 @@
+<div class="container">
+  <h3 style="padding-top: 25px;">Vehicle Details</h3>
+  <mat-divider style="padding-top: 25px;"></mat-divider>
+  <div class="row">
+    <div class="col-md-6" style="padding-bottom: 25px;">
+      <form [formGroup]="vehicleForm" (ngSubmit)="uploadVehicle()">
+
+        <div class="form-group col-md-3">
+          <mat-form-field appearance="fill">
+            <mat-label>Vehicle</mat-label>
+            <input formControlName="vehicle" matInput>
+          </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let vehicle of vehicles">
+          {{vehicle.vehicle}}
+          <span>
+            <button (click)="deleteVehicle(vehicle)" mat-mini-fab color="warn" style="float: right;">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+</div>

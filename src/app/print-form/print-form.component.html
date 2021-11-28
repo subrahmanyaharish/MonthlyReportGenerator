@@ -1,0 +1,85 @@
+<div class="container bootdey" style="padding-top: 25px;">
+  <div class="row invoice row-printable" id="contentToConvert">
+    <div style="margin: 40px;">
+
+      <div class="col-md-10">
+        <!-- col-lg-12 start here -->
+        <div class="panel panel-default plain" id="dash_0">
+          <!-- Start .panel -->
+          <div class="panel-body p30">
+            <div class="row">
+              <!-- Start .row -->
+
+              <!-- col-lg-6 end here -->
+              <div class="col-lg-12">
+                <!-- col-lg-12 start here -->
+                <div class="invoice-details mt25">
+                  <div class="well">
+                    <ul class="list-unstyled mb0">
+                      <li><strong>Invoice</strong> {{reportToBePrinted.invoiceNumber}}</li>
+                      <li><strong>Invoice Date:</strong> {{reportToBePrinted.invoiceDate|date:'medium'}}</li>
+                      <!-- <li><strong>Status:</strong> <span class="label label-danger"> Not paid</span></li> -->
+                    </ul>
+                  </div>
+                </div>
+                <div class="invoice-to mt25">
+                  <ul class="list-unstyled">
+                    <li><strong>Invoiced To</strong></li>
+                    <li>Customer Name - {{reportToBePrinted.name}}</li>
+                    <li>Mobile - {{reportToBePrinted.mobile}}</li>
+                  </ul>
+                </div>
+                <div class="invoice-to mt25">
+                  <ul class="list-unstyled">
+                    <li><strong>Driver details</strong></li>
+                    <li>Driver Name - {{reportToBePrinted.driverName}}</li>
+                    <li>Vehicle Number - {{reportToBePrinted.vehicleNumber}}</li>
+                    <li>Start Reading - {{reportToBePrinted.openReading}}</li>
+                    <li>End Reading - {{reportToBePrinted.endReading}}</li>
+                  </ul>
+                </div>
+                <div class="invoice-items">
+                  <div class="table-responsive" style="overflow: hidden; outline: none;" tabindex="0">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th class="per70 text-center">Description</th>
+                          <th class="per70 text-center">Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Travelled from {{reportToBePrinted.from}} to {{reportToBePrinted.to}}</td>
+                          <td class="text-center">{{reportToBePrinted.travelCost}}</td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th class="text-right">Credit:</th>
+                          <th class="text-center">{{reportToBePrinted.advance}}</th>
+                        </tr>
+                        <tr>
+                          <th class="text-right">Net Payable:</th>
+                          <th class="text-center">{{reportToBePrinted.travelCost - reportToBePrinted.advance}}</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+                <div class="invoice-footer mt25">
+                  <p class="text-center">{{reportToBePrinted.invoiceDate|date:'medium'}}</p>
+                </div>
+              </div>
+              <!-- col-lg-12 end here -->
+            </div>
+            <!-- End .row -->
+          </div>
+        </div>
+        <!-- End .panel -->
+      </div>
+      <!-- col-lg-12 end here -->
+    </div>
+  </div>
+  <button mat-raised-button color='primary' (click)="captureScreen()">Print</button>
+
+</div>
