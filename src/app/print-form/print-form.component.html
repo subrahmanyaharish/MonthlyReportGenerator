@@ -1,4 +1,6 @@
-<div class="container bootdey" style="padding-top: 25px;">
+<div class="container bootdey" style="padding-top: 25px; margin-bottom: 40px;">
+  <button mat-raised-button color='primary' (click)="captureScreen()">Print</button>
+
   <div class="row invoice row-printable" id="contentToConvert">
     <div style="margin: 40px;">
 
@@ -36,10 +38,12 @@
                     <li>Vehicle Number - {{reportToBePrinted.vehicleNumber}}</li>
                     <li>Start Reading - {{reportToBePrinted.openReading}}</li>
                     <li>End Reading - {{reportToBePrinted.endReading}}</li>
+                    <li>Total Reading - {{reportToBePrinted.totalReading}}</li>
+                    <li>Cost per km - {{reportToBePrinted.costPerKm}}</li>
                   </ul>
                 </div>
                 <div class="invoice-items">
-                  <div class="table-responsive" style="overflow: hidden; outline: none;" tabindex="0">
+                  <div class="table-responsive" style="overflow: hidden; outline: none; width: 400px;" tabindex="0">
                     <table class="table table-bordered">
                       <thead>
                         <tr>
@@ -78,9 +82,8 @@
                     </table>
                   </div>
                 </div>
-                <div class="invoice-footer mt25">
-                  <p class="text-center">{{reportToBePrinted.invoiceDate|date:'medium'}}</p>
-                </div>
+
+
               </div>
               <!-- col-lg-12 end here -->
             </div>
@@ -92,6 +95,4 @@
       <!-- col-lg-12 end here -->
     </div>
   </div>
-  <button mat-raised-button color='primary' (click)="captureScreen()">Print</button>
-
 </div>

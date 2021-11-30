@@ -37,7 +37,6 @@ export class PrintFormComponent implements OnInit {
 
   public captureScreen()
   {
-    debugger
     var data = document.getElementById('contentToConvert');
     html2canvas(data).then(canvas => {
       // Few necessary setting options
@@ -47,7 +46,7 @@ export class PrintFormComponent implements OnInit {
       var heightLeft = imgHeight;
 
       const contentDataURL = canvas.toDataURL('image/png')
-      var pdf = new jsPDF("p", "mm", "a4");
+      var pdf = new jsPDF("p", "mm", "a6");
       var position = 0;
       pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
       pdf.save(`${this.reportToBePrinted.invoiceNumber}2021.pdf`); // Generated PDF
